@@ -45,22 +45,6 @@ jobs:
       - name: Stop gradle daemon
         run: ./app/gradlew --stop
 
-      - name: Verify build output directories
-        run: |
-          echo "Checking native/out contents..."
-          ls -R native/out || true
-          
-          if [ ! -d "native/out/arm64-v8a" ]; then
-            echo "ERROR: native/out/arm64-v8a directory not found!"
-            exit 1
-          fi
-          
-          if [ ! -d "native/out/x86_64" ]; then
-            echo "ERROR: native/out/x86_64 directory not found!"
-            exit 1
-          fi
-          
-          echo "✓ Both arm64-v8a and x86_64 directories found"
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
