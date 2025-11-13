@@ -28,15 +28,17 @@ jobs:
         uses: ./.github/actions/setup
         with:
           is-asset-build: true
+c
+      - name: Build All
+        run: ./build.py -vr native
+      # - name: Build magiskpolicy
+      #   run: ./build.py -vr native magiskpolicy
 
-      - name: Build magiskpolicy
-        run: ./build.py -vr native magiskpolicy
+      # - name: Build resetprop
+      #   run: ./build.py -vr native resetprop
 
-      - name: Build resetprop
-        run: ./build.py -vr native resetprop
-
-      - name: Build magiskboot
-        run: ./build.py -vr native magiskboot
+      # - name: Build magiskboot
+      #   run: ./build.py -vr native magiskboot
 
       - name: Stop gradle daemon
         run: ./app/gradlew --stop
