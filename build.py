@@ -71,7 +71,7 @@ abi_alias = {
     "arm64": "arm64-v8a",
     "x64": "x86_64",
 }
-default_archs = {"arm64-v8a"}
+default_archs = {"arm64-v8a","x86_64"}
 support_targets = {"magisk", "magiskinit", "magiskboot", "magiskpolicy", "resetprop"}
 default_targets = support_targets - {"resetprop"}
 rust_targets = default_targets.copy()
