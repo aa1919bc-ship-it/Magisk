@@ -15,7 +15,7 @@ on:
 jobs:
   build:
     name: Build APatch Component From Magisk 
-    runs-on: macos-15
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     steps:
@@ -34,6 +34,9 @@ jobs:
 
       - name: Build resetprop
         run: ./build.py -vr native resetprop
+
+      - name: Build magiskboot
+        run: ./build.py -vr native magiskboot
 
       - name: Stop gradle daemon
         run: ./app/gradlew --stop
